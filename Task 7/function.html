@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Function Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      padding: 40px;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #0b6568;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #180f4e;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .output {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Functions</h1>
+
+  <!-- Greet -->
+  <div class="section">
+    <h3>Greet Someone</h3>
+    <input type="text" id="nameInput" placeholder="Enter a name">
+    <button onclick="showGreet()">Greet</button>
+    <div class="output" id="greetOutput"></div>
+  </div>
+
+  <!-- Is Even -->
+  <div class="section">
+    <h3> Is the Number Even?</h3>
+    <input type="number" id="evenInput" placeholder="Enter a number">
+    <button onclick="checkEven()">Check</button>
+    <div class="output" id="evenOutput"></div>
+  </div>
+
+  <!-- Rectangle Area -->
+  <div class="section">
+    <h3>Rectangle Area</h3>
+    <input type="number" id="widthInput" placeholder="Width">
+    <input type="number" id="heightInput" placeholder="Height">
+    <button onclick="calcArea()">Calculate Area</button>
+    <div class="output" id="areaOutput"></div>
+  </div>
+
+  <script>
+    // 1. Greet Function
+    function greet(name) {
+      return `Hello, ${name}!`;
+    }
+    function showGreet() {
+      const name = document.getElementById("nameInput").value;
+      const result = greet(name);
+      document.getElementById("greetOutput").textContent = result;
+    }
+
+    // 2. isEven Function
+    function isEven(num) {
+      return num % 2 === 0;
+    }
+    function checkEven() {
+      const number = parseInt(document.getElementById("evenInput").value);
+      const result = isEven(number) ? "Yes, it's even." : "No, it's odd.";
+      document.getElementById("evenOutput").textContent = result;
+    }
+
+    // 3. Rectangle Area Function
+    function rectangleArea(width, height) {
+      return width * height;
+    }
+    function calcArea() {
+      const width = parseFloat(document.getElementById("widthInput").value);
+      const height = parseFloat(document.getElementById("heightInput").value);
+      const area = rectangleArea(width, height);
+      document.getElementById("areaOutput").textContent = `Area = ${area}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f9ff;
+      padding: 30px;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #187bcd;
+    }
+    .output {
+      margin-top: 20px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Array Operations</h1>
+  <button onclick="processArray()">Run Tasks</button>
+
+  <div class="output" id="result"></div>
+
+  <script>
+    function processArray() {
+      const numbers = [3, 5, 1, 8, 2];
+
+      const largest = Math.max(...numbers);
+      const sum = numbers.reduce((acc, num) => acc + num, 0);
+      const doubled = numbers.map(num => num * 2);
+
+      const resultHTML = `
+        <strong>Original Array:</strong> ${numbers.join(", ")} <br><br>
+        <strong>Largest Number:</strong> ${largest} <br><br>
+        <strong>Sum of Numbers:</strong> ${sum} <br><br>
+        <strong>Doubled Array:</strong> ${doubled.join(", ")}
+      `;
+
+      document.getElementById("result").innerHTML = resultHTML;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Fruits</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f2f8ff;
+    }
+    h1 {
+      color: #163f6d;
+    }
+    .output {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #1a4474;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #7fa1c2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Favorite Fruits</h1>
+  <button onclick="handleFruits()">Show Fruits</button>
+
+  <div class="output" id="result"></div>
+
+  <script>
+    function handleFruits() {
+      const fruits = ["Mango", "Strawberry", "Banana", "Apple", "Orange"];
+      const thirdFruit = fruits[2];
+
+      fruits.push("Pineapple", "Grapes"); // Add two fruits
+      fruits.shift(); // Remove the first fruit
+
+      const output = `
+        <strong>Original Fruits:</strong> Mango, Strawberry, Banana, Apple, Orange <br><br>
+        <strong>3rd Fruit:</strong> ${thirdFruit} <br><br>
+        <strong>Updated Fruits:</strong> ${fruits.join(", ")}
+      `;
+
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
